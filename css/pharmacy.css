@@ -1,0 +1,231 @@
+﻿* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media(max-width:768px) {
+    .container {
+        width: 750px
+    }
+}
+
+@media(max-width:991px) {
+    .container {
+        width: 970px
+    }
+}
+
+@media(max-width:1200px) {
+    .container {
+        width: 1170px
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer
+}
+/*end Global Rule/*/
+/*start header*/
+.header {
+    background-color: #303641;
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 15px 15px
+}
+
+    .header .top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+@media(max-width:991px) {
+    .header .top {
+        display: none;
+    }
+}
+
+.header .list:hover .top + ul {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width:991px) {
+    .list {
+        display: none;
+    }
+}
+
+
+.header .top .left ul {
+    display: flex;
+}
+
+    .header .top .left ul li a {
+        padding-right: 15px;
+        font-size: 13px
+    }
+
+.header .top .right ul {
+    display: flex
+}
+
+    .header .top .right ul li a {
+        padding-left: 20px;
+    }
+
+        .header .top .right ul li a:hover {
+            color: gold;
+            text-decoration: underline
+        }
+
+    .header .top .right ul li i {
+        padding-right: 7px;
+        color: sandybrown
+    }
+
+.header .madium {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between
+}
+
+    .header .madium input[type="search"] {
+        border: none;
+        border-radius: 20px;
+        width: 317px;
+        height: 31px;
+        padding: 15px
+    }
+
+        .header .madium input[type="search"]:hover {
+            outline: none;
+            width: calc(317px + 2px)
+        }
+
+    .header .madium img {
+        width: 35px
+    }
+
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 22px;
+    flex-wrap: wrap;
+    position: relative
+}
+
+    .nav ul li a {
+        position: relative
+    }
+
+        .nav ul li a::before {
+            content: attr(data-text);
+            position: absolute;
+            width: 0;
+            border-right: 10px solid var(--color);
+            overflow: hidden;
+            color: var(--color);
+            transition: 1s;
+        }
+
+        .nav ul li a:hover::before {
+            width: 100%;
+            filter: drop-shadow( 0 0 25px var(--crl))
+        }
+
+@media(max-width:991px) {
+    .nav ul li {
+        display: none;
+    }
+}
+
+.header .nav .baby {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    padding: 30px;
+    gap: 30px;
+    background-color: #233463;
+    margin-top: 0px;
+    display: none;
+    transition: 1s
+}
+
+.header .nav li:hover .baby {
+    display: flex
+}
+
+.header .nav .baby .links {
+    flex-direction: column;
+    flex: 1;
+    min-width: 220px;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 0px;
+}
+
+.header .nav .links li a {
+    display: block;
+    padding: 15px;
+    color: navajowhite;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    .header .nav .links li a:hover {
+        color: #4eb91a
+    }
+/*end header*/
+/*start home*/
+.home {
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+    .home .container {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fill,minmax(350px,1fr))
+    }
+
+    .home h4 {
+        font-size: 15px;
+        background-color: blanchedalmond;
+        display: block;
+        text-align: center;
+        top: -70px;
+        position: relative;
+        padding: 10px 0;
+        z-index: -1
+    }
+
+    .home img {
+        max-width: 100%
+    }
+/*end home*/
